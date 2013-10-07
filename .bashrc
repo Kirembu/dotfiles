@@ -114,10 +114,3 @@ export PATH=${JAVA_HOME}/bin:$PATH
 
 export ANT_HOME=/opt/ant/apache-ant-1.8.2
 export PATH=${ANT_HOME}/bin:$PATH
-
-export WTK_HOME=/opt/java_utils/Wireless_Toolkit_2.5.2
-export PATH=${WTK_HOME}/bin:$PATH
-
-PATH=$PATH:$HOME/spotify_notify
-export PATH
-
