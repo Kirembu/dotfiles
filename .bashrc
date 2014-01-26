@@ -5,9 +5,9 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# don't put duplicate lines in the history. See bash(1) for more options
-# ... or force ignoredups and ignorespace
-HISTCONTROL=ignoredups:ignorespace
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -19,6 +19,10 @@ HISTFILESIZE=2000
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+#shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -102,15 +106,20 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# set path
-PATH=$PATH:$HOME/google_appengine
-export PATH
+alias such=git
+alias very=git
+alias wow='git status' 
 
-### SHUJAA
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-export JAVA_HOME=/opt/jdks/jdk1.7.0
-#export JAVA_HOME=/opt/jdks/jdk1.6.0
+export JAVA_HOME=/opt/jre1.7.0_51/
 export PATH=${JAVA_HOME}/bin:$PATH
+export JRE_HOME=/opt/jre1.7.0_51/
+export PATH=${JRE_HOME}/bin:$PATH
 
-export ANT_HOME=/opt/ant/apache-ant-1.8.2
-export PATH=${ANT_HOME}/bin:$PATH
+export CATALINA_HOME=/opt/apache-tomcat-6.0.33
+export CATALINA_BASE=~/opt/apache-tomcat-6.0.33
+
+export SHUJAASMSGW_HOME=${HOME}/svn/ShujaaSMSGW/trunk/webapp
+
+export GPGKEY=A4BDD090
