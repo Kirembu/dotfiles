@@ -48,6 +48,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'mattn/emmet-vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 
